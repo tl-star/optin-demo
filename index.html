@@ -1,0 +1,38 @@
+cat > index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Free Content</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+       background:#111;color:#fff;padding:20px}
+  .card{width:100%;max-width:380px;text-align:center}
+  h1{font-size:1.6rem;margin:0 0 8px}
+  p{color:#bbb;margin:0 0 24px}
+  input{width:100%;padding:14px;font-size:16px;border-radius:10px;border:0;margin-bottom:12px}
+  button{width:100%;padding:14px;font-size:16px;border:0;border-radius:10px;
+         background:#ff4d6d;color:#fff;font-weight:600;cursor:pointer}
+  a.skip{display:inline-block;margin-top:16px;color:#999;font-size:.95rem}
+  #msg{margin-top:12px;color:#7ee787;min-height:1.2em}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1 id="name"></h1>
+  <p id="tagline"></p>
+  <form id="f">
+    <input type="email" id="email" placeholder="you@example.com" required>
+    <button type="submit">Get free content</button>
+  </form>
+  <div id="msg"></div>
+  <a class="skip" id="skip" href="links.html">No thanks</a>
+</div>
+<script src="config.js"></script>
+<script src="optin.js"></script>
+</body>
+</html>
+EOF
