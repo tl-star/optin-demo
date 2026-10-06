@@ -1,4 +1,3 @@
-cat > optin.js << 'EOF'
 document.getElementById("name").textContent = CONFIG.name;
 document.getElementById("tagline").textContent = CONFIG.tagline;
 track("page_view");
@@ -18,4 +17,3 @@ document.getElementById("f").addEventListener("submit", function (e) {
   document.getElementById("msg").textContent = "Demo only: nothing was saved. Redirecting...";
   setTimeout(function () { location.href = "links.html"; }, 1200);
 });
-EOF

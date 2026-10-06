@@ -1,4 +1,3 @@
-cat > config.js << 'EOF'
 const CONFIG = {
   name: "Sample Creator",
   tagline: "Add your email to get free content",
@@ -20,4 +19,3 @@ function track(eventName) {
   } catch (e) {}
   console.log("track:", eventName);
 }
-EOF
