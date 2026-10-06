@@ -1,0 +1,38 @@
+cat > links.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Links</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+       background:#111;color:#fff;padding:20px}
+  .card{width:100%;max-width:380px;text-align:center}
+  h1{font-size:1.5rem;margin:0 0 24px}
+  a.btn{display:block;padding:14px;margin-bottom:12px;border-radius:10px;
+        background:#222;color:#fff;text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1 id="name"></h1>
+  <div id="links"></div>
+</div>
+<script src="config.js"></script>
+<script>
+  document.getElementById("name").textContent = CONFIG.name;
+  track("links_view");
+  var box = document.getElementById("links");
+  CONFIG.links.forEach(function(l){
+    var a = document.createElement("a");
+    a.className = "btn"; a.href = l.url; a.textContent = l.label;
+    a.addEventListener("click", function(){ track("click_" + l.label); });
+    box.appendChild(a);
+  });
+</script>
+</body>
+</html>
+EOF
